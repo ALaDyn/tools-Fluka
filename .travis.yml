@@ -16,7 +16,6 @@ addons:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then brew update                                                                               ;fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then brew cask uninstall oclint                                                                ;fi
   - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then brew install gcc                                                                          ;fi
 
 install:
@@ -25,4 +24,3 @@ install:
 
 script:
   - mkdir build && cd build && cmake .. -DCMAKE_Fortran_COMPILER=$FC && cmake --build . --target install
-
