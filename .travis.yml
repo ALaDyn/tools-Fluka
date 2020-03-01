@@ -11,12 +11,7 @@ compiler:
 addons:
   apt:
     packages:
-    - clang-3.6
     - gfortran
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then brew update                                     ;fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then brew install gcc                                ;fi
 
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then export FC=/usr/local/bin/gfortran-9             ;fi
